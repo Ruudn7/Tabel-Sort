@@ -7,3 +7,17 @@
     text-align: center;
 }
 
+.TableSett{
+        width: 100%;
+    text-align: left;
+}
+
+.tabletop{
+    background-color: black;
+    height: 30px;
+}
+
+.topBord{
+
+border-right: white;
+}
