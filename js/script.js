@@ -6,25 +6,66 @@ var tab = document.querySelector("#myTable"),
     ths = tab.querySelectorAll("thead th"),
     trs = tab.querySelectorAll("tbody tr");
     
-
-
-    
-    console.log(ths);
-    console.log(trs[1]);
+/*
 
     for(i=0; i < trs.length ; i++){
         if( i % 2 == 0){
-            trs[i].classList.add("color1"); //Michał, tu jest błąd ponieważ nie znajduje za pierwszym czytaniem klasy w HTML?
+            trs[i].classList.add("color1"); 
         } else {
             trs[i].classList.add("color2"); 
         }
 
     }
 
+*/    
+    console.log(ths);
+    function makeArray (nodeList){
 
-    function sortBy() {
+        var arr = [];
+        for (var i = 0 ; i < nodeList.length; i++) {
 
-        console.log("sortuję");
+            arr.push(nodeList[i]);
+        }
+
+        return arr;
+
+    }
+
+    function sortBy(e) {
+        var target = e.target,
+            thsArr = makeArray(ths),
+            trsArr = makeArray(trs),
+            index = thsArr.indexOf(target),
+            df = document.createDocumentFragment(),
+            order = (target.className === "" || target.className === "desc") ? "asc" : "desc" ;
+
+            console.log(order);
+        trsArr.sort(function(a, b){
+            
+        var tdA = a.children[index].textContent,
+            tdB = b.children[index].textContent;
+
+            if(tdA < tdB){
+                return (target.className === "asc") ? -1 : 1;
+            } else if(tdA > tdB){
+                return (target.className === "asc") ? 1 : -1;
+            } else {
+                return 0;
+            }
+            
+         
+        });
+
+            trsArr.forEach(function(tr){
+                df.appendChild(tr);
+
+            })
+            target.className = order;
+            tab.querySelector("tbody").appendChild(df);
+     /*       console.log(trsArr); */
+
+
+
 
     }
 
@@ -33,5 +74,11 @@ var tab = document.querySelector("#myTable"),
         ths[j].onclick = sortBy;
 
     }
+
+
+
+
+
+
 
 })();
