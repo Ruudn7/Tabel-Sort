@@ -18,6 +18,18 @@ var tab = document.querySelector("#myTable"),
     }
 
 */    
+
+    function clearclassName(nodeList){
+
+for (i = 0 ; i < nodeList.length; i++){
+
+    nodeList[i].className = " ";
+
+    } 
+}
+
+
+
     console.log(ths);
     function makeArray (nodeList){
 
@@ -39,6 +51,8 @@ var tab = document.querySelector("#myTable"),
             df = document.createDocumentFragment(),
             order = (target.className === "" || target.className === "desc") ? "asc" : "desc" ;
 
+ clearclassName(ths);
+
             console.log(order);
         trsArr.sort(function(a, b){
             
@@ -53,6 +67,7 @@ var tab = document.querySelector("#myTable"),
                 return 0;
             }
             
+          
          
         });
 

@@ -17,7 +17,7 @@
     height: 40px;
 }
 
-.topBord{
+.co{
 
 border-right:solid 0.5px #808088;
 padding-left: 5px; 
@@ -44,6 +44,7 @@ table th:after {
     
     top: 50%;
     right: 20px;
+    
 }
 
 table th.asc:after {
@@ -51,6 +52,8 @@ table th.asc:after {
     border-style: solid;
     border-width: 0 5px 10px 5px;
     border-color: transparent transparent #E2E2E2 transparent;
+    
+    
 }
 
 table th.desc:after {
@@ -68,4 +71,9 @@ table tr:nth-child(even) td {
 table tr:nth-child(odd) td {
     background-color: #808080;
     height: 30px;
+}
+
+table th {
+    border-right:solid 0.5px #808088;
+    padding-left: 10px;
 }
