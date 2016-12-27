@@ -19,13 +19,15 @@
 
 .topBord{
 
-border-right:solid 0.5px grey;
+border-right:solid 0.5px #808088;
 padding-left: 5px; 
 }
 
 .color1{
-    background-color: #518846
+    background-color: grey;
+    height: 30px;
 }
 .color2{
-    background-color: #845548
+    background-color: white;
+    height: 30px;
 }

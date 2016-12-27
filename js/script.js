@@ -4,13 +4,15 @@
 
 var tab = document.querySelector("#myTable"),
     ths = tab.querySelectorAll("thead th"),
-    trs = tab.querySelectorAll("tbody tr"),
-    lengthT = trs.length;
-    console.log(lengthT);
-    console.log(trs);
+    trs = tab.querySelectorAll("tbody tr");
+    
+
+
+    
+    console.log(ths);
     console.log(trs[1]);
 
-    for(i=0;i<=lengthT ;i++){
+    for(i=0; i < trs.length ; i++){
         if( i % 2 == 0){
             trs[i].classList.add("color1"); //Michał, tu jest błąd ponieważ nie znajduje za pierwszym czytaniem klasy w HTML?
         } else {
@@ -20,5 +22,16 @@ var tab = document.querySelector("#myTable"),
     }
 
 
+    function sortBy() {
+
+        console.log("sortuję");
+
+    }
+
+    for(var j = 0; j < ths.length; j++) {
+
+        ths[j].onclick = sortBy;
+
+    }
 
 })();
