@@ -51,7 +51,7 @@ for (i = 0 ; i < nodeList.length; i++){
             df = document.createDocumentFragment(),
             order = (target.className === "" || target.className === "desc") ? "asc" : "desc" ;
 
- clearclassName(ths);
+
 
             console.log(order);
         trsArr.sort(function(a, b){
@@ -70,6 +70,8 @@ for (i = 0 ; i < nodeList.length; i++){
           
          
         });
+
+         clearclassName(ths);
 
             trsArr.forEach(function(tr){
                 df.appendChild(tr);
